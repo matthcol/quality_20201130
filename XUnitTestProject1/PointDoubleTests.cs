@@ -80,14 +80,16 @@ namespace XUnitTestProject1
             Assert.Equal(expectedDistance, computedDistance);
         }
 
-        [Fact]
-        public void TranslateSuccessTest()
+        [Theory]
+        [InlineData(4.25, 6.125)]
+        [InlineData(-4.25, 6.125)]
+        [InlineData(4.25, -6.125)]
+        [InlineData(-4.25, -6.125)]
+        public void TranslateSuccessTest(double deltaX, double deltaY)
         {
             // given (classic values)
             var x = 1.25;
             var y = 3.5;
-            var deltaX = 4.25;
-            var deltaY = 6.125;
             var point = new PointDouble
             {
                 Name = "A",

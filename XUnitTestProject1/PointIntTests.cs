@@ -35,7 +35,7 @@ namespace XUnitTestProject1
         }
 
         [Theory]
-        [InlineData(5.0,1,7,5,4)]
+        [InlineData(5.0, 1, 7, 5, 4)]
         [InlineData(int.MaxValue, 0, 0, int.MaxValue, 0)]
         [InlineData(int.MaxValue+1.0, 0, 0, int.MinValue, 0)]
         public void DistanceManySuccessTest(double expectedDistance, int x1, int y1, int x2, int y2)

@@ -22,6 +22,8 @@ namespace XUnitTestProject1
             Assert.All<PointInt>(points, p => Assert.True(p.Y < 10));
             Assert.All<PointInt>(points,
                 p => Assert.InRange<int>(p.X, 1, 7));
+            // Contains: Any
+            Assert.Contains<int>(1, points.Select(p => p.X));
             Assert.Equal<int>(xs, points.Select(p => p.X));
             Assert.Contains<PointInt>(points[1], points);
             var pointA = points[0];
@@ -30,6 +32,7 @@ namespace XUnitTestProject1
             Assert.NotEmpty(points);
             points.Clear();
             Assert.Empty(points);
+         
         }
     }
 }
