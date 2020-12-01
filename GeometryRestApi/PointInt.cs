@@ -12,14 +12,23 @@ namespace GeometryRestApi
 
         public int Y { get; set; }
 
-        public void translate(int deltaX, int deltaY)
+        public void Translate(int deltaX, int deltaY)
         {
-            throw new NotImplementedException("Not implemented.");
+            checked
+            {
+                X += deltaX;
+                Y += deltaY;
+            }
         }
 
-        public double distance(PointInt other)
+        public double Distance(PointInt other)
         {
-            throw new NotImplementedException("Not implemented.");
+            // before implementing function:
+            // throw new NotImplementedException("Not implemented.");
+            return Math.Sqrt(
+                Math.Pow(X - other.X, 2)
+                + Math.Pow(Y - other.Y, 2)
+            );
         }
     }
 }

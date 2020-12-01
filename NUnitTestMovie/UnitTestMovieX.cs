@@ -40,5 +40,20 @@ namespace UnitTestMovieX
             Assert.True(year == movie.Year, $"{year} incorrectly modified");
         }
 
+        [Theory]
+        [InlineData("Rambo", 1982)]
+        [InlineData("Rambo II", 1985)]
+        [InlineData("Rambo III", 1986)]
+        public void TestCreateMany(string title, int year)
+        {
+            // given
+            var movie = new Movie { Title = title, Year = year };
+            // when
+            movie.Year = year;
+            // then
+            Assert.True(title.Equals(movie.Title), $"{title} incorrectly set");
+            Assert.True(year == movie.Year, $"{year} incorrectly set");
+        }
+
     }
 }

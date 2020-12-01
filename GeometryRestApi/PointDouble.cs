@@ -12,14 +12,21 @@ namespace GeometryRestApi
 
         public double Y { get; set; }
 
-        public void translate(double deltaX, double deltaY)
+        public void Translate(double deltaX, double deltaY)
         {
-            throw new NotImplementedException("Not implemented.");
+            // throw new NotImplementedException("Not implemented.");
+            X += deltaX;
+            Y += deltaY;
         }
 
-        public double distance(PointInt other)
+        public double Distance(PointDouble other)
         {
-            throw new NotImplementedException("Not implemented.");
+            //  throw new NotImplementedException("Not implemented.");
+            // NB: other languages Java, Python C++ have hypot function
+            return Math.Sqrt(
+                Math.Pow(X - other.X, 2)
+                + Math.Pow(Y - other.Y, 2)
+            );
         }
     }
 }
